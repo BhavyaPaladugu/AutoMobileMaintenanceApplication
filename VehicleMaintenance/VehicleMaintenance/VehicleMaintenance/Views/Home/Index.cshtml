@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Vehicle Maintenance - Home";
+}
+
+<div class="jumbotron" >
+    <h4>Welcome to Curve Auto service !</h4>
+   
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p>@Html.ActionLink("Add/View Vehicle Types", "Index", "VehicleType")</p>
+        <p>@Html.ActionLink("Add/View Vehicles Information", "Index", "Vehicle")</p>
+        <p>@Html.ActionLink("Add/View Maintenance Tasks", "Index", "Task")</p>
+        <p>@Html.ActionLink("Add/View Invalid Associations", "Index", "InvalidAssociation")</p>
+        <p>@Html.ActionLink("Add/View Scheduled Maintenance Tasks", "Index", "Schedule")</p>
+    </div>
+</div>

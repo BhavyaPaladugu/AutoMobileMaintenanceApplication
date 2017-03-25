@@ -1,0 +1,35 @@
+﻿@model IEnumerable<VehicleMaintenance.DAL.Models.Schedule>
+
+@{
+    ViewBag.Title = "Schedules - Display";
+}
+
+<p>
+    @Html.ActionLink("Add New Schedule", "Create")
+</p>
+
+@if (Model.Count() != 0)
+{
+    <h3>Available Schedules</h3>
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.Label(string.Format("{0} {1} - {2}", item.Vehicle.Make, item.Vehicle.Model, item.Vehicle.VehicleType.VehicleTypeName))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Task.TaskName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ScheduleId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ScheduleId })
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+
+
+

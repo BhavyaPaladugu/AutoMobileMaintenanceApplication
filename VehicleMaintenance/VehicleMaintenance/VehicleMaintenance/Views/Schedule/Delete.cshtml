@@ -1,0 +1,35 @@
+﻿@model VehicleMaintenance.DAL.Models.Schedule
+
+@{
+    ViewBag.Title = "Schedules - Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Vehicle Info
+        </dt>
+        <dd>
+            @Html.Label(string.Format("{0} {1} - {2}", Model.Vehicle.Make, Model.Vehicle.Model,Model.Vehicle.VehicleType.VehicleTypeName))
+        </dd>
+        <dt>
+            Task Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Task.TaskName)
+        </dd>
+    </dl>
+    
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
